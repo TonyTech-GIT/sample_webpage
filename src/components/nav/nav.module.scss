@@ -1,0 +1,32 @@
+@import "../../scss/variables";
+
+.nav__container {
+    background-color: $primary-color;
+
+    justify-content: center;
+
+    gap: 4em;
+}
+
+.nav__logo{
+    width: 10%;
+}
+
+.nav__menu li{
+    list-style: none;
+}
+.nav__menu li a {
+    text-decoration: none;
+    color: #000;
+    font-size: 1.2em;
+    font-weight: bold;
+
+    transition: all 0.25s ease-in-out;
+    
+}
+.nav__menu li a:not(:last-child) {
+    margin-right: 2em;
+}
+.nav__menu li a:hover {
+    color: $third-color;
+}

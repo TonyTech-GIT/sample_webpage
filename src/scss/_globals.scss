@@ -1,3 +1,5 @@
+@import './variables';
+
 *{
     margin: 0;
     padding: 0;
@@ -5,8 +7,40 @@
 }
 
 
-$body-color: green;
+// $body-color: #eee;
 
 body {
-  background-color: $body-color;
+  background-color: $third-color;
+}
+
+.flex {
+  display: flex;
+
+  &_jc-sb{
+    justify-content: space-between;
+  }
+
+  &_ai-c{
+    align-items: center;
+  }
+}
+
+.grid {
+  display: grid;
+}
+
+.padding {
+  padding: 2em;
+}
+
+.px {
+  padding-inline: 4em;
+}
+
+.py {
+  padding-block: 4em;
+}
+
+.max-container {
+  max-width: 1440px;
 }
