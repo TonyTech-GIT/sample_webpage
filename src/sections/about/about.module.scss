@@ -1,0 +1,28 @@
+.container {
+    justify-content: center;
+
+    position: relative;
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+
+        position: relative;
+        
+
+        >div {
+            
+            >.aboutImage {
+                background-image: url(../../assets/images/about-img.jpg);
+                height: 300px;
+                width: 800px;
+                background-repeat: no-repeat;
+                background-size: cover;
+    
+                border-radius: 5px;
+            }
+        }
+        
+    }
+}
+

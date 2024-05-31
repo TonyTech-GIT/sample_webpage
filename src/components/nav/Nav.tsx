@@ -15,6 +15,7 @@ const Nav = () => {
   return (
     <>
       {menuModal && <div className={navStyles.overlay}></div>}
+
       <section
         className={` max-container flex flex_ai-c ${navStyles.nav__container}`}
       >

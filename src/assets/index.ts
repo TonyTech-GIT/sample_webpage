@@ -1,5 +1,2 @@
-import logo from "./images/logo.png"
-
-export {
-    logo
-}
+import {menuBtn, menuClose} from './icons';
+import { Logo, aboutBg } from './images';
