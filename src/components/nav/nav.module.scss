@@ -6,6 +6,8 @@
 
     justify-content: space-between;
 
+    position: relative;
+
     @include md {
         justify-content: center;
     }
@@ -42,6 +44,7 @@
     color: #000;
     font-size: 1.2em;
     font-weight: bold;
+    font-family: 'poppins', sans-serif;
 
     transition: all 0.25s ease-in-out;
     
@@ -60,6 +63,10 @@
 
     cursor: pointer;
 
+    position: relative;
+
+    z-index: 2000;
+
     @include md{
         display: none;
     }
@@ -67,4 +74,19 @@
 }
 .nav__menuBtn img{
     max-width: 100%;
+}
+
+.overlay{
+
+    @include md {
+        display: none;
+    }
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0, 0.5);
+    z-index: 1000;
 }
