@@ -1,4 +1,5 @@
 // type Props = {}
+import { videoOne } from "../../assets/video";
 import aboutStyles from "./about.module.scss";
 
 const About = () => {
@@ -29,7 +30,16 @@ const About = () => {
 
         <div
           className={`${aboutStyles.grid_item_three} ${aboutStyles.grid_item}`}
-        ></div>
+        >
+          <video autoPlay loop muted>
+            <source src={videoOne} type="video/mp4" />
+          </video>
+
+          <div className={aboutStyles.marquee}>
+            {" "}
+            <p>Going beyond what is perceived as possible...</p>
+          </div>
+        </div>
       </div>
     </section>
   );
