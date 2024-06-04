@@ -1,7 +1,12 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+
 .container {
     justify-content: center;
 
     position: relative;
+
+    flex-direction: column;
 
     &__info {
         display: flex;
@@ -13,13 +18,78 @@
         >div {
             
             >.aboutImage {
-                background-image: url(../../assets/images/about-img.jpg);
+                background: linear-gradient(rgba(0,0,0, 0.3), rgba(0,0,0,0.3)), url(../../assets/images/about-img.jpg);
                 height: 300px;
                 width: 800px;
                 background-repeat: no-repeat;
                 background-size: cover;
-    
                 border-radius: 5px;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                >h2 {
+                    color: #eee;
+                    font-size: 4rem;
+                    font-family: 'Montserrat', sans-serif;
+
+                    >span {
+                       display: block;
+                       text-align: center;
+                       text-transform: capitalize;
+
+                       margin-top: 1rem;
+                    }
+                }
+            }
+        }
+
+       
+        
+    }
+
+    >.info_grid_container{
+        display: grid;
+
+        @include md {
+            grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 1rem;
+        }
+        
+
+        margin-top: 2rem;
+
+        >.grid_item {
+            height: 300px;
+            width: 300px;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.2));
+            border-radius: 10px;
+            
+
+            &.grid_item_one{
+                // background-color: red;
+                
+                grid-column: 1 / span 2;
+                grid-row: 1;
+                width: 100%;
+            }
+
+            &.grid_item_two{
+                // background-color: red;
+                
+                grid-column:3;
+                grid-row: 1;
+                // width: 100%;
+            }
+
+            &.grid_item_three{
+                // background-color: red;
+                
+                grid-column: 1 / span 3;
+                grid-row: 2;
+                width: 100%;
             }
         }
         

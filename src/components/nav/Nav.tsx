@@ -1,6 +1,6 @@
 // type Props = {};
 import navStyles from "./nav.module.scss";
-import { logo } from "../../assets";
+import { Logo } from "../../assets/images";
 import { menuBtn } from "../../assets/icons";
 import MenuModal from "../menuModal/MenuModal";
 import { useState } from "react";
@@ -19,7 +19,7 @@ const Nav = () => {
       <section
         className={` max-container flex flex_ai-c ${navStyles.nav__container}`}
       >
-        <img className={`${navStyles.nav__logo}`} src={logo} alt="logo" />
+        <img className={`${navStyles.nav__logo}`} src={Logo} alt="logo" />
 
         <div className={`${navStyles.nav__menu}`}>
           <li>
