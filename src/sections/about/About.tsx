@@ -33,19 +33,25 @@ const About = () => {
           className={`${aboutStyles.grid_item_two} ${aboutStyles.grid_item}`}
         >
           <div className={aboutStyles.about_list_wrapper}>
-            <div className={aboutStyles.about_list_item}>
+            <div
+              className={`${aboutStyles.about_list_item} ${aboutStyles.fast_delivery}`}
+            >
               <img src={fastDelivery} alt="fast-delivery" />
 
               <h3>Fast Delivery</h3>
             </div>
 
-            <div className={aboutStyles.about_list_item}>
+            <div
+              className={`${aboutStyles.about_list_item} ${aboutStyles.service_icon}`}
+            >
               <img src={serviceIcon} alt="service-icon" />
 
               <h3>24/7 Service</h3>
             </div>
 
-            <div className={aboutStyles.about_list_item}>
+            <div
+              className={`${aboutStyles.about_list_item} ${aboutStyles.efficiency_icon}`}
+            >
               <img src={efficiencyIcon} alt="efficiency-icon" />
 
               <h3>Efficient</h3>

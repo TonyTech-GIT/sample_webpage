@@ -16,21 +16,34 @@
 
     > div {
       > .aboutImage {
-        background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+        @include md {
+          height: 300px;
+          width: 700px;
+        }
+
+        @include lg {
+          height: 300px;
+          width: 930px;
+        }
+        background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
           url(../../assets/images/about-img.jpg);
-        height: 300px;
-        width: 800px;
+
         background-repeat: no-repeat;
         background-size: cover;
         border-radius: 5px;
-
         display: flex;
         justify-content: center;
         align-items: center;
 
         > h2 {
           color: #eee;
-          font-size: 4rem;
+
+          @include md {
+            font-size: 4rem;
+          }
+
+          font-size: 3.8rem;
+          text-align: center;
           font-family: "Montserrat", sans-serif;
 
           > span {
@@ -47,6 +60,7 @@
 
   > .info_grid_container {
     display: grid;
+    grid-template-columns: 1;
 
     @include md {
       grid-template-columns: repeat(3, 1fr);
@@ -59,29 +73,52 @@
     > .grid_item {
       height: 300px;
       width: 300px;
-      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2));
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
       border-radius: 10px;
 
+      &:not(:last-child) {
+        @include md {
+          margin-bottom: 0;
+        }
+        margin-bottom: 2rem;
+      }
+
       &.grid_item_one {
-        grid-column: 1 / span 2;
-        grid-row: 1;
-        width: 100%;
+        @include md {
+          grid-column: 1 / span 2;
+          grid-row: 1;
+          width: 100%;
+        }
 
         display: flex;
         flex-direction: column;
         justify-content: center;
 
-        padding-left: 1.5rem;
+        @include md {
+          padding-left: 1.5rem;
+        }
+
         > h2 {
-          font-size: 3.2rem;
+          @include md {
+            font-size: 3.2rem;
+            text-align: left;
+          }
+          font-size: 2.8rem;
+          text-align: center;
 
           color: $primary-color;
 
           margin-bottom: 1.5rem;
         }
         > button {
-          background-color: #000;
+          background-color: #975d1b;
           color: $primary-color;
+
+          @include md {
+            //Responiveness for button
+            margin: 0;
+          }
+          margin: 0 auto;
 
           padding: 0.8rem 3rem;
           width: fit-content;
@@ -102,8 +139,11 @@
       }
 
       &.grid_item_two {
-        grid-column: 3;
-        grid-row: 1;
+        @include md {
+          grid-column: 3;
+          grid-row: 1;
+        }
+
         // width: 100%;
 
         > .about_list_wrapper {
@@ -112,6 +152,11 @@
           display: flex;
           flex-direction: column;
           justify-content: center;
+
+          width: 100%;
+          overflow: hidden;
+          white-space: nowrap;
+          box-sizing: border-box;
 
           > .about_list_item {
             display: flex;
@@ -126,15 +171,50 @@
 
               font-size: 1.5rem;
             }
+
+            &.fast_delivery {
+              color: #975d1b;
+
+              animation: animationOne 8.5s linear infinite;
+            }
+            &.service_icon {
+              color: #975d1b;
+
+              animation: animationTwo 9.5s linear infinite;
+            }
+            &.efficiency_icon {
+              color: #975d1b;
+
+              animation: animationOne 8.5s linear infinite;
+            }
+          }
+          @keyframes animationOne {
+            from {
+              transform: translateX(-100%);
+            }
+            to {
+              transform: translateX(100%);
+            }
+          }
+
+          @keyframes animationTwo {
+            from {
+              transform: translateX(100%);
+            }
+            to {
+              transform: translateX(-100%);
+            }
           }
         }
       }
 
       &.grid_item_three {
-        grid-column: 1 / span 3;
-        grid-row: 2;
-        width: 100%;
-        height: 100%;
+        @include md {
+          grid-column: 1 / span 3;
+          grid-row: 2;
+          width: 100%;
+          height: 100%;
+        }
 
         display: flex;
         // justify-content: center;
