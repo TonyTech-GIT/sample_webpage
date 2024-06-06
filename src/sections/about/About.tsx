@@ -1,4 +1,5 @@
 // type Props = {}
+import { efficiencyIcon, fastDelivery, serviceIcon } from "../../assets/icons";
 import { videoOne } from "../../assets/video";
 import aboutStyles from "./about.module.scss";
 
@@ -22,11 +23,35 @@ const About = () => {
       <div className={aboutStyles.info_grid_container}>
         <div
           className={`${aboutStyles.grid_item_one} ${aboutStyles.grid_item}`}
-        ></div>
+        >
+          <h2>Get started with us today.</h2>
+
+          <button>Get Started</button>
+        </div>
 
         <div
           className={`${aboutStyles.grid_item_two} ${aboutStyles.grid_item}`}
-        ></div>
+        >
+          <div className={aboutStyles.about_list_wrapper}>
+            <div className={aboutStyles.about_list_item}>
+              <img src={fastDelivery} alt="fast-delivery" />
+
+              <h3>Fast Delivery</h3>
+            </div>
+
+            <div className={aboutStyles.about_list_item}>
+              <img src={serviceIcon} alt="service-icon" />
+
+              <h3>24/7 Service</h3>
+            </div>
+
+            <div className={aboutStyles.about_list_item}>
+              <img src={efficiencyIcon} alt="efficiency-icon" />
+
+              <h3>Efficient</h3>
+            </div>
+          </div>
+        </div>
 
         <div
           className={`${aboutStyles.grid_item_three} ${aboutStyles.grid_item}`}

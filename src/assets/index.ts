@@ -1,4 +1,4 @@
-import {menuBtn, menuClose} from './icons';
+import {menuBtn, menuClose, efficiencyIcon, serviceIcon, fastDelivery} from './icons';
 import { Logo, aboutBg } from './images';
 
 

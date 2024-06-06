@@ -66,12 +66,68 @@
         grid-column: 1 / span 2;
         grid-row: 1;
         width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        padding-left: 1.5rem;
+        > h2 {
+          font-size: 3.2rem;
+
+          color: $primary-color;
+
+          margin-bottom: 1.5rem;
+        }
+        > button {
+          background-color: #000;
+          color: $primary-color;
+
+          padding: 0.8rem 3rem;
+          width: fit-content;
+
+          font-size: 1.5rem;
+
+          border-radius: 5px;
+          border: none;
+
+          cursor: pointer;
+
+          transition: all 0.15s ease-in-out;
+
+          &:hover {
+            background-color: #242323;
+          }
+        }
       }
 
       &.grid_item_two {
         grid-column: 3;
         grid-row: 1;
         // width: 100%;
+
+        > .about_list_wrapper {
+          padding: 2rem 1rem;
+
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+
+          > .about_list_item {
+            display: flex;
+            align-items: center;
+
+            &:not(:last-child) {
+              margin-bottom: 1.5rem;
+            }
+
+            > h3 {
+              margin-left: 2rem;
+
+              font-size: 1.5rem;
+            }
+          }
+        }
       }
 
       &.grid_item_three {
