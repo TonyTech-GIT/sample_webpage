@@ -6,8 +6,17 @@
 
   justify-content: center;
 
+  @include md {
+    flex-direction: row;
+  }
+
+  flex-direction: column;
+
   > .imageContainer {
-    width: 10%;
+    width: 30%;
+    @include md {
+      width: 10%;
+    }
 
     > img {
       max-width: 100%;
