@@ -1,0 +1,21 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+.footerContainer {
+  background-color: $primary-color;
+
+  justify-content: center;
+
+  > .imageContainer {
+    width: 10%;
+
+    > img {
+      max-width: 100%;
+    }
+  }
+
+  > p {
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+}

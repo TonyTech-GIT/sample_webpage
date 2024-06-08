@@ -10,9 +10,10 @@ function App() {
       <section className="padding">
         <About />
       </section>
-      <section className="padding">
-        <Footer />
-      </section>
+      {/* <section className="padding">
+        
+      </section> */}
+      <Footer />
     </div>
   );
 }
