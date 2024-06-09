@@ -5,6 +5,8 @@ import { menuBtn } from "../../assets/icons";
 import MenuModal from "../menuModal/MenuModal";
 import { useState } from "react";
 
+import { motion } from "framer-motion";
+
 const Nav = () => {
   const [menuModal, setMenuModal] = useState<boolean>(false);
 
@@ -16,7 +18,10 @@ const Nav = () => {
     <>
       {menuModal && <div className={navStyles.overlay}></div>}
 
-      <section
+      <motion.section
+        initial={{ opacity: 0, y: -100 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, ease: "easeInOut" }}
         className={` max-container flex flex_ai-c ${navStyles.nav__container}`}
       >
         <img className={`${navStyles.nav__logo}`} src={Logo} alt="logo" />
@@ -34,7 +39,7 @@ const Nav = () => {
         </div>
 
         {menuModal && <MenuModal />}
-      </section>
+      </motion.section>
     </>
   );
 };

@@ -3,12 +3,49 @@ import { efficiencyIcon, fastDelivery, serviceIcon } from "../../assets/icons";
 import { videoOne } from "../../assets/video";
 import aboutStyles from "./about.module.scss";
 
+import { motion } from "framer-motion";
+
+const gridContainerVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.5,
+    },
+  },
+};
+
+const gridItemVariants = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1 },
+};
+
+const aboutHeroVariants = {
+  initial: { opacity: 0, x: -150 },
+  animate: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 1,
+      ease: "easeInOut",
+    },
+  },
+};
+
 const About = () => {
   return (
     <section
       className={`max-container flex flex_ai-c ${aboutStyles.container}`}
     >
-      <div className={aboutStyles.container__info}>
+      <motion.div
+        variants={aboutHeroVariants}
+        initial="initial"
+        animate="animate"
+        // initial={{ opacity: 0, x: -150 }}
+        // animate={{ opacity: 1, x: 0 }}
+        // transition={{ duration: 1.5, ease: "easeInOut" }}
+        className={aboutStyles.container__info}
+      >
         <div>
           <div className={aboutStyles.aboutImage}>
             <h2>
@@ -18,18 +55,25 @@ const About = () => {
         </div>
 
         {/* <p>bg image above</p> */}
-      </div>
+      </motion.div>
 
-      <div className={aboutStyles.info_grid_container}>
-        <div
+      <motion.div
+        variants={gridContainerVariants}
+        initial="hidden"
+        animate="show"
+        className={aboutStyles.info_grid_container}
+      >
+        <motion.div
+          variants={gridItemVariants}
           className={`${aboutStyles.grid_item_one} ${aboutStyles.grid_item}`}
         >
           <h2>Get started with us today.</h2>
 
           <button>Get Started</button>
-        </div>
+        </motion.div>
 
-        <div
+        <motion.div
+          variants={gridItemVariants}
           className={`${aboutStyles.grid_item_two} ${aboutStyles.grid_item}`}
         >
           <div className={aboutStyles.about_list_wrapper}>
@@ -57,9 +101,10 @@ const About = () => {
               <h3>Efficient</h3>
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        <div
+        <motion.div
+          variants={gridItemVariants}
           className={`${aboutStyles.grid_item_three} ${aboutStyles.grid_item}`}
         >
           <video autoPlay loop muted>
@@ -70,8 +115,8 @@ const About = () => {
             {" "}
             <p>Going beyond what is perceived as possible...</p>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };

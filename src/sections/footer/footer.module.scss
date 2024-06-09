@@ -6,8 +6,12 @@
 
   justify-content: center;
 
+  padding-bottom: 1rem;
+
   @include md {
     flex-direction: row;
+
+    padding-bottom: 0;
   }
 
   flex-direction: column;

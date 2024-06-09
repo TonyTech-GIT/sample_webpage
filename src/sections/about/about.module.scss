@@ -19,11 +19,13 @@
         @include md {
           height: 300px;
           width: 700px;
+          padding-inline: 0;
         }
 
         @include lg {
           height: 300px;
           width: 930px;
+          padding-inline: 0;
         }
         background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
           url(../../assets/images/about-img.jpg);
@@ -35,6 +37,11 @@
         justify-content: center;
         align-items: center;
 
+        height: 300px;
+        width: 18.5rem;
+
+        padding-inline: 0.3rem;
+
         > h2 {
           color: #eee;
 
@@ -42,7 +49,7 @@
             font-size: 4rem;
           }
 
-          font-size: 3.8rem;
+          font-size: 3rem;
           text-align: center;
           font-family: "Montserrat", sans-serif;
 
