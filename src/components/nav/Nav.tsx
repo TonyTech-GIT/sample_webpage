@@ -21,9 +21,9 @@ const Nav = () => {
 
   useEffect(() => {
     if (isInView) {
-      mainControls.start("animate");
+      mainControls.start("inView");
     } else {
-      mainControls.start("initial");
+      mainControls.start("outOfView");
     }
   }, [isInView, mainControls]);
 
@@ -32,8 +32,23 @@ const Nav = () => {
       {menuModal && <div className={navStyles.overlay}></div>}
 
       <motion.section
-        initial={{ opacity: 0, y: -100 }}
-        animate={{ opacity: 1, y: 0 }}
+        ref={headerContainerRef}
+        initial="initial"
+        animate={mainControls}
+        variants={{
+          initial: { opacity: 0, y: -70 },
+          // animate: { opacity: 1, y: 0 },
+          inView: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 1, ease: "easeInOut" },
+          },
+          outOfView: {
+            opacity: 0.5,
+            y: -70,
+            transition: { duration: 0.1, ease: "easeInOut" },
+          },
+        }}
         transition={{ duration: 1, ease: "easeInOut" }}
         className={` max-container flex flex_ai-c ${navStyles.nav__container}`}
       >
