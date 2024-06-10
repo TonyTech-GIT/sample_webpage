@@ -1,4 +1,5 @@
 // type Props = {}
+// import { useEffect, useRef } from "react";
 import { efficiencyIcon, fastDelivery, serviceIcon } from "../../assets/icons";
 import { videoOne } from "../../assets/video";
 import aboutStyles from "./about.module.scss";
@@ -33,6 +34,17 @@ const aboutHeroVariants = {
 };
 
 const About = () => {
+  // const footerContainerRef = useRef(null);
+
+  // const isInView = useInView(footerContainerRef, { once: true });
+  // const mainControls = useAnimation();
+
+  // useEffect(() => {
+  //   if (isInView) {
+  //     mainControls.start("visible");
+  //   }
+  // }, [isInView]);
+
   return (
     <section
       className={`max-container flex flex_ai-c ${aboutStyles.container}`}
@@ -69,7 +81,20 @@ const About = () => {
         >
           <h2>Get started with us today.</h2>
 
-          <button>Get Started</button>
+          <motion.button
+            whileTap={{ scale: 0.9 }}
+            whileHover={{
+              scale: 1.1,
+              boxShadow: "0px 0px 8px rgba(0, 0, 0, 0.25)",
+              transition: {
+                duration: 0.2,
+                bounceDamping: 10,
+                bounceStiffness: 100,
+              },
+            }}
+          >
+            Get Started
+          </motion.button>
         </motion.div>
 
         <motion.div

@@ -3,9 +3,9 @@ import navStyles from "./nav.module.scss";
 import { Logo } from "../../assets/images";
 import { menuBtn } from "../../assets/icons";
 import MenuModal from "../menuModal/MenuModal";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
-import { motion } from "framer-motion";
+import { motion, useAnimation, useInView } from "framer-motion";
 
 const Nav = () => {
   const [menuModal, setMenuModal] = useState<boolean>(false);
@@ -13,6 +13,19 @@ const Nav = () => {
   const handleMenuModal = () => {
     setMenuModal(!menuModal);
   };
+
+  const headerContainerRef = useRef(null);
+
+  const isInView = useInView(headerContainerRef, { threshold: 0.1 });
+  const mainControls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      mainControls.start("animate");
+    } else {
+      mainControls.start("initial");
+    }
+  }, [isInView, mainControls]);
 
   return (
     <>
