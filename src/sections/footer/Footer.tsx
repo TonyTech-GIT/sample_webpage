@@ -27,13 +27,13 @@ const Footer = () => {
       initial="hidden"
       animate={mainControls}
       variants={{
-        hidden: { opacity: 0, y: 8 },
+        hidden: { opacity: 0.5, y: 10 },
         visible: {
           opacity: 1,
           y: 0,
         },
       }}
-      transition={{ delay: 0.3 }}
+      transition={{ duration: 1.5, ease: "easeInOut" }}
       ref={footerContainerRef}
       className={`max-container flex flex_ai-c ${footerStyles.footerContainer}`}
     >

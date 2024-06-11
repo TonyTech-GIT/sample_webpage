@@ -2,91 +2,87 @@
 @import "../../scss/mixins";
 
 .nav__container {
-    background-color: $primary-color;
+  background-color: $primary-color;
 
-    justify-content: space-between;
+  justify-content: space-between;
 
-    position: relative;
+  position: relative;
 
-    @include md {
-        justify-content: center;
-    }
-    
+  @include md {
+    justify-content: center;
+  }
 
-    gap: 4em;
+  gap: 4em;
 }
 
-.nav__logo{
-    width: 20%;
+.nav__logo {
+  width: 20%;
 
-    @include md{
-        width: 10%;
-    }
-   
+  @include md {
+    width: 10%;
+  }
 }
 
 .nav__menu {
-    @include sm {
-        display: none;
-    }
+  @include sm {
+    display: none;
+  }
 
-    @include md {
-        display: block;
-    }
-
+  @include md {
+    display: block;
+  }
 }
 
-.nav__menu li{
-    list-style: none;
+.nav__menu li {
+  list-style: none;
 }
 .nav__menu li a {
-    text-decoration: none;
-    color: #000;
-    font-size: 1.2em;
-    font-weight: bold;
-    font-family: 'poppins', sans-serif;
+  text-decoration: none;
+  color: #000;
+  font-size: 1.2em;
+  font-weight: bold;
+  font-family: "poppins", sans-serif;
 
-    transition: all 0.25s ease-in-out;
-    
+  transition: all 0.25s ease-in-out;
 }
 .nav__menu li a:not(:last-child) {
-    margin-right: 2em;
+  margin-right: 2em;
 }
 .nav__menu li a:hover {
-    color: $third-color;
+  color: $third-color;
 }
 
-.nav__menuBtn{
-    width: 7%;
+.nav__menuBtn {
+  width: 7%;
 
-    margin-right: 1em;
+  margin-right: 1em;
 
-    cursor: pointer;
+  cursor: pointer;
 
-    position: relative;
+  position: relative;
 
-    z-index: 2000;
+  z-index: 2000;
 
-    @include md{
-        display: none;
-    }
-
+  @include md {
+    display: none;
+  }
 }
-.nav__menuBtn img{
-    max-width: 100%;
+.nav__menuBtn img {
+  max-width: 100%;
 }
 
-.overlay{
+.overlay {
+  @include md {
+    display: none;
+  }
 
-    @include md {
-        display: none;
-    }
-    
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0,0,0, 0.5);
-    z-index: 1000;
+  //   overflow: hidden;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
 }

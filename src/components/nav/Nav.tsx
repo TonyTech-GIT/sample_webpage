@@ -27,6 +27,15 @@ const Nav = () => {
     }
   }, [isInView, mainControls]);
 
+  // disable scrolling when modal is shown....
+  useEffect(() => {
+    if (menuModal) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [menuModal]);
+
   return (
     <>
       {menuModal && <div className={navStyles.overlay}></div>}
@@ -45,8 +54,8 @@ const Nav = () => {
           },
           outOfView: {
             opacity: 0.5,
-            y: -70,
-            transition: { duration: 0.1, ease: "easeInOut" },
+            y: -10,
+            transition: { duration: 1.5, ease: "easeInOut" },
           },
         }}
         transition={{ duration: 1, ease: "easeInOut" }}

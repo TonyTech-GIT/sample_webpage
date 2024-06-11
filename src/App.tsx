@@ -10,9 +10,7 @@ function App() {
       <section className="padding">
         <About />
       </section>
-      {/* <section className="padding">
-        
-      </section> */}
+
       <Footer />
     </div>
   );
